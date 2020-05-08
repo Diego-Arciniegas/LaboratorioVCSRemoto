@@ -19,10 +19,12 @@ cartas = ["Payne" , "Hendrix" , "Stone" , "Coffey" , "Whitaker" , "Pope" ,
 
 premium = ["AIVLIS", "LEIRBAG", "NAILUJ", "SOLRAC", "ANAID"]
 
+#Funcion que imprime numero de elmentos de las listas
 def imprimir(lista):
     print("cartas: ",len(lista))
     print(lista,"\n")
 
+#Genera una nueva lista de 10 elementos no duplicados 
 def generador(lista,cantidad):
     lista1=[]
     nuevalista=[]
@@ -44,6 +46,7 @@ def generador(lista,cantidad):
         nuevalista.append(lista[i])
     return nuevalista
 
+#Combinar elementos de las listas
 def combinador(lista1,lista2):
     lista3=[]
     for i in range(0,len(lista1)):
@@ -53,6 +56,7 @@ def combinador(lista1,lista2):
     random.shuffle(lista3,random.random)
     return lista3
 
+#Probabilidad de obtener una carta premium
 def loteria(lista,lista2):
     a=False
     b=0
@@ -78,6 +82,7 @@ def loteria(lista,lista2):
         print(lista)
     return lista
 
+#
 def ordenar(lista):
     for i in range(0,len(lista)):
         for a in range(0,len(lista)-1):
@@ -87,6 +92,7 @@ def ordenar(lista):
                 lista[a+1]=acu
     return lista
 
+#Cuántas cartas repetidas tuvo el jugador.
 def repetidas2(lista):
     lista1=[]
     lista2=[[],[]]
@@ -107,6 +113,7 @@ def repetidas2(lista):
         lista2[1].append(ac)
     return(lista2)
 
+#La cantidad de veces que aparece cada carta en la lista final de cartas del jugador
 def cartasP(lista,lista2):
     lista3=[]
     print("Cartas Premium: ")
@@ -119,6 +126,7 @@ def cartasP(lista,lista2):
     print("")
     return lista3
 
+#Cuántas cartas empiezan con cada una de las letras del alfabeto inglés
 def letras_alfabeto(lista):
     letras=[["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],[]]
     print("\n","letras alfabeto ingles: ")
@@ -132,6 +140,7 @@ def letras_alfabeto(lista):
     for i in range(0,len(letras[0])):
         print(letras[0][i],"= ",letras[1][i])
 
+#Cuál es la carta que tiene el nombre con la longitud más larga y la más corta
 def carta_nombreLC(lista):
     lista1=[[i,len(lista[i])] for i in range(0,len(lista))]
     for i in range(0,len(lista1)):
@@ -143,6 +152,7 @@ def carta_nombreLC(lista):
     print("\n","Menor cantidad de letras: ",lista[lista1[0][0]])
     print(" Mayor cantidad de letras: ",lista[lista1[-1][0]],"\n")
 
+#Cuántas cartas terminan con la letra con la que empieza la(s) cartas premium obtenidas en las cartas finales del jugador. Si no obtuvo ninguna carta premium, la salida debe ser “no tiene cartas premium”.
 def terminacion_letra(lista,cartasp):
     lista2=[]
     b=not cartasp
@@ -161,6 +171,7 @@ def terminacion_letra(lista,cartasp):
         else:
             print(lista2,"\n")
 
+#Qué letras aparecen escritas de forma consecutiva dos o más veces y cuántas veces aparecen consecutivas.
 def letras_consecutivas(lista):
     lista1=[]
     for i in range(0,len(lista)):
@@ -171,6 +182,7 @@ def letras_consecutivas(lista):
     for i in range(0,len(lista2[0])):
         print("la letra ",lista2[0][i]," se repite en pares ",lista2[1][i]," vez")
 
+#Cuántas veces está representada cada letra del alfabeto inglés en los nombres de todas las cartas de la lista final de cartas del jugador. ¿Aparece la misma cantidad de veces cada carta? Si no, ¿a qué se debe esto.
 def letras_alfabeto2(lista):
     letras=[["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],[]]
     print("\n","letras de todas la carta, del alfabeto ingles: ")
